@@ -1,0 +1,13 @@
+html {
+  background-color: burlywood;
+}
+
+.grid-cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: brown;
+}
