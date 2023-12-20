@@ -1,5 +1,8 @@
 html {
   background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-cell {
