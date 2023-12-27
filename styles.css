@@ -1,16 +1,33 @@
-html {
-  background-color: burlywood;
+body {
+  background-image: url("./images/doodles-5960094_1280.jpg");
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+h1 {
+  color: rgba(16, 235, 16, 0.959);
+  background-color: blueviolet;
+}
+#container {
+  width: 50rem;
+  height: 50rem;
+  border: 7px solid black;
+}
+
 .grid-cell {
-  width: 30px;
-  height: 30px;
+  box-sizing: border-box;
+  float: left;
   border: 1px solid #ccc;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  background-color: brown;
+  background-color: white;
+}
+
+footer {
+  margin-top: 0.2%;
+  display: flex;
+  background-color: rgba(16, 235, 16, 0.959);
+  padding: 0.4%;
+  width: 25rem;
+  justify-content: center;
 }
