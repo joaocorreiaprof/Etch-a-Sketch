@@ -1,9 +1,8 @@
 // Function to create a grid with a specified size
 function createGrid(size) {
   const container = document.getElementById("container");
-  const cellSize = 800 / size; // Calculate cell size based on the container size. 800 becasue (50 rem×16 px/rem= 800 px)
+  const cellSize = 800 / size;
 
-  // Clear the container
   container.innerHTML = "";
 
   for (let i = 0; i < size; i++) {
@@ -15,18 +14,23 @@ function createGrid(size) {
       container.appendChild(cell);
 
       // Add event listener for mouse enter and mouse leave
-      cell.addEventListener(
-        "mouseenter",
-        () => (cell.style.background = randomRGB())
-      );
-      cell.addEventListener(
-        "mouseleave",
-        () => (cell.style.background = mouseenter)
-      );
+      cell.addEventListener("mouseenter", paintCell);
+      cell.addEventListener("mouseleave", paintCell);
     }
   }
 }
-//Get random painting color
+
+// Function to paint cell with random color
+function paintCell() {
+  this.style.background = randomRGB();
+}
+
+// Function to paint cell with white color
+function paintWhite() {
+  this.style.background = "white";
+}
+
+// Get random painting color
 function randomRGB() {
   let num = Math.round(0xffffff * Math.random());
   let r = num >> 16;
@@ -35,12 +39,30 @@ function randomRGB() {
   return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
+// OUPS button
+const buttonOups = document.getElementById("eraseColor");
+buttonOups.onclick = erase;
+
+function erase() {
+  const cells = document.querySelectorAll(".grid-cell");
+
+  cells.forEach((cell) => {
+    // Add new event listeners for mouse enter and mouse leave
+    cell.addEventListener("mouseenter", paintWhite);
+    cell.addEventListener("mouseleave", paintWhite);
+
+    // Remove previous event listeners
+    cell.removeEventListener("mouseenter", paintCell);
+    cell.removeEventListener("mouseleave", paintCell);
+  });
+}
+
 // Call the function to create a default 16x16 grid
 createGrid(16);
 
-// Size me option
-const button = document.getElementById("numberOfGrids");
-button.onclick = chooseSize;
+// Size me button
+const buttonSizeMe = document.getElementById("numberOfGrids");
+buttonSizeMe.onclick = chooseSize;
 
 function chooseSize() {
   let size = prompt("What size do you wish for your game? (Max 100)");
@@ -49,4 +71,30 @@ function chooseSize() {
   if (!isNaN(size) && size > 0 && size <= 100) {
     createGrid(size);
   }
+}
+
+// Time to Gumble button
+const buttonTimeToGumble = document.getElementById("randomColor");
+buttonTimeToGumble.onclick = paintAgain;
+
+function paintAgain() {
+  const cells = document.querySelectorAll(".grid-cell");
+
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseenter", paintCell);
+    cell.addEventListener("mouseleave", paintCell);
+  });
+}
+
+// Color Picked
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.onclick = pickColor;
+
+function pickColor() {
+  const cells = document.querySelectorAll(".grid-cell");
+
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseenter");
+    cell.addEventListener("mouseleave");
+  });
 }
