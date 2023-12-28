@@ -1,7 +1,7 @@
 // Function to create a grid with a specified size
 function createGrid(size) {
   const container = document.getElementById("container");
-  const cellSize = 800 / size;
+  const cellSize = 752 / size;
 
   container.innerHTML = "";
 
@@ -18,6 +18,12 @@ function createGrid(size) {
       cell.addEventListener("mouseleave", paintCell);
     }
   }
+}
+
+//Fuction to paint cell with user choice
+function userColorChoice(event) {
+  const hex = colorPicker.value;
+  event.target.style.background = hex;
 }
 
 // Function to paint cell with random color
@@ -88,13 +94,14 @@ function paintAgain() {
 
 // Color Picked
 const colorPicker = document.getElementById("colorPicker");
+
 colorPicker.onclick = pickColor;
 
 function pickColor() {
   const cells = document.querySelectorAll(".grid-cell");
 
   cells.forEach((cell) => {
-    cell.addEventListener("mouseenter");
-    cell.addEventListener("mouseleave");
+    cell.addEventListener("mouseenter", userColorChoice);
+    cell.addEventListener("mouseleave", userColorChoice);
   });
 }

@@ -6,13 +6,19 @@ body {
   align-items: center;
 }
 
-h1 {
+h1,
+button {
   color: rgba(16, 235, 16, 0.959);
   background-color: blueviolet;
+  border: 3px solid black;
+  border-radius: 28px;
+  padding: 10px;
+  margin: 10px;
+  letter-spacing: 2px;
 }
 #container {
-  width: 50rem;
-  height: 50rem;
+  width: 47rem;
+  height: 47rem;
   border: 7px solid black;
 }
 
@@ -22,12 +28,23 @@ h1 {
   border: 1px solid #ccc;
   background-color: white;
 }
-
+/*
 footer {
-  margin-top: 0.2%;
   display: flex;
   background-color: rgba(16, 235, 16, 0.959);
   padding: 0.4%;
-  width: 25rem;
+  width: 119rem;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
+*/
+footer {
+  display: flex;
+  background-color: rgba(16, 235, 16, 0.959);
+  padding: 0.2%;
+  margin-top: 10px;
+  font-size: larger;
+  border: 3px solid black;
+  border-radius: 28px;
 }
