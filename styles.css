@@ -28,23 +28,13 @@ button {
   border: 1px solid #ccc;
   background-color: white;
 }
-/*
+
 footer {
-  display: flex;
+  padding: 1.5px;
   background-color: rgba(16, 235, 16, 0.959);
-  padding: 0.4%;
-  width: 119rem;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-}
-*/
-footer {
-  display: flex;
-  background-color: rgba(16, 235, 16, 0.959);
-  padding: 0.2%;
   margin-top: 10px;
   font-size: larger;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 28px;
+  font-size: 21px;
 }
